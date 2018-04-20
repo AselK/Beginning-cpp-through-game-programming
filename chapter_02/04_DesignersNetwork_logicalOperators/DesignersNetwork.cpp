@@ -1,42 +1,41 @@
 #include <iostream>
-
-using namespace std;
+#include <string>
 
 int main()
 {
-	string username;
-	string password;
+	std::string username;
+	std::string password;
 	bool success;
-	cout << "Game Designer's Network" << endl;
+	std::cout <<"\tGame Designer's Network\n";
 	do
 	{
-		cout << "Username: " << endl;
-		cin >> username;
-		cout << "Password: " << endl;
-		cin >> password;
+		std::cout <<"\nUsername: ";
+		std::cin >> username;
+		std::cout <<"Password: ";
+		std::cin >> password;
 		if (username == "S.Meier" && password == "civilization")
 		{
-			cout << "Hey, Sid." << endl;
+			std::cout <<"\nHey, Sid.";
 			success = true;
 		}
 		else if (username == "S.Miyamoto" && password == "mariobros")
 		{
-			cout << "What's up. Shigeru?" << endl;
+			std::cout <<"\nWhat's up. Shigeru?";
 			success = true;
 		}
 		else if (username == "W.Wright" && password == "thesims")
 		{
-			cout << "How goes it, Will?" << endl;
+			std::cout <<"\nHow goes it, Will?";
 			success = true;
 		}
 		else if (username == "guest" || password == "guest")
 		{
-			cout << "Welcome, guest." << endl;
+			std::cout <<"\nWelcome, guest.";
 			success = true;
 		}
 		else
 		{
-			cout << "Your login failed." << endl;
+			std::cout <<"\nYour login failed.";
 			success = false;
 		}
 	} 
