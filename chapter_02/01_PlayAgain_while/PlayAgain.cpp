@@ -4,26 +4,13 @@ using namespace std;
 
 int main()
 {
-	cout << "Difficulty Levels" << endl;
-	cout << "1 - Easy" << endl;
-	cout << "2 - Normal" << endl;
-	cout << "3 - Hard" << endl;
-	int choise;
-	cin >> choise;
-	switch (choise)
+	char again = 'y';
+	while (again == 'y')
 	{
-		case 1:
-			cout << "You picked Easy." << endl;
-			break;
-		case 2:
-			cout << "You picked Normal." << endl;
-			break;
-		case 3:
-			cout << "You picked Hard." << endl;
-			break;
-		default:
-			cout << "You made an illegal choice." << endl;
+		std::cout <<"\n**Played an exciting game**";
+		std::cout <<"\nDo you want to play again? (y/n): ";
+		std::cin >> again;
 	}
-	return 0;
+	std::cout <<"\nOkay. bye.";
 }
 
