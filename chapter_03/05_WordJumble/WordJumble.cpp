@@ -20,6 +20,14 @@ int main()
 		{"filthy", "Very dirty."},
 		{"refugee", "Person who moved in another place to live."}
 	};
+	std::cout << "\t\t\tWelcome to Word Jumble!\n\n";
+	std::cout << "Unscramble the letters to make a word.\n";
+	std::cout << "Enter 'hint' for a hint.\n";
+	std::cout << "Enter 'quit' to quit the game.\n\n";
+	
+
+	while (true)
+	{
 	srand(static_cast <unsigned int> (time(0)));
 	int choice = (rand() % NUM_WORDS);
 	std::string theWord = WORDS[choice][WORD]; //слово которое нужно угадать
@@ -31,20 +39,16 @@ int main()
 	{
 		int index1 = (rand() % length);
 		int index2 = (rand() % length);
+		
 		char temp = jumble[index1];
 		jumble[index1] = jumble[index2];
 		jumble[index2] = temp;
 	}
-	std::cout << "\t\t\tWelcome to Word Jumble!\n\n";
-	std::cout << "Unscramble the letters to make a word.\n";
-	std::cout << "Enter 'hint' for a hint.\n";
-	std::cout << "Enter 'quit' to quit the game.\n\n";
 	std::cout << "The jumble is: " << jumble;
 	std::string guess;
 	//std::cout << "\n\nYour guess: ";
 	//std::cin >> guess;
-
-	while (guess != "quit")
+	while ((guess != theWord) && (guess != "quit"))
 	{
 		std::cout << "\n\nYour guess: ";
 		std::cin >> guess;
@@ -63,14 +67,20 @@ int main()
 			std::cout << "Do you want to continue the game. yes/no?";
 			std::string userInput;
 			std::cin >> userInput;
-			if ( userInput == "no")
+			if ( userInput == "yes")
+			{
+				continue;
+			}
+			else
 			{
 				break;
 			}
+			
 		}
 		else 
 		{
 			std::cout << "Sorry, that's not it." << std::endl;
 		}
-	}
+	} break;
+}
 }
