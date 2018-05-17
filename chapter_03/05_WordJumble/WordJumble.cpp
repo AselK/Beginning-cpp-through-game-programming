@@ -48,6 +48,7 @@ int main()
 	std::string guess;
 	//std::cout << "\n\nYour guess: ";
 	//std::cin >> guess;
+	std::string userInput;
 	while ((guess != theWord) && (guess != "quit"))
 	{
 		std::cout << "\n\nYour guess: ";
@@ -65,22 +66,21 @@ int main()
 			std::cout << "Your score is: " << length << std::endl;
 			//std::cout << "\nThanks for playing.\n" << std::endl;
 			std::cout << "Do you want to continue the game. yes/no?";
-			std::string userInput;
 			std::cin >> userInput;
 			if ( userInput == "yes")
 			{
 				continue;
-			}
-			else
-			{
-				break;
-			}
-			
+			}	
 		}
 		else 
 		{
+			
 			std::cout << "Sorry, that's not it." << std::endl;
 		}
-	} break;
+	}
+	if (userInput == "no")
+			{
+				break;
+			}
 }
 }
